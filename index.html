@@ -144,7 +144,7 @@ validation &lt;- building[-inTrain,]</code></pre>
 trainPC &lt;- predict(preProc, training[,-53])
 df &lt;- data.frame(trainPC, training$classe)
 modelFit &lt;- train(training.classe~., method=&quot;rf&quot;, data=df, verbose = FALSE)</code></pre>
-<p>Once the model was created, I then used the validation set to test, and created a confution matrix between the actual results in the validation set and the predicted results from our model.</p>
+<p>Once the model was created, I then used the validation set to test and created a confusion matrix between the actual results in the validation set and the predicted results from our model.</p>
 <pre class="r"><code>testPC &lt;- predict(preProc, validation[, -53])
 confusionMatrix(validation$classe, predict(modelFit, testPC))</code></pre>
 <pre><code>## Confusion Matrix and Statistics
